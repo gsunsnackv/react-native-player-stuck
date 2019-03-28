@@ -9,6 +9,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import Video from 'react-native-video';
+
 
 const videos = [
   "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
@@ -61,6 +63,8 @@ class DetailsScreen extends React.Component {
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Details Screen</Text>
         <Text>{videos[index]}</Text>
+        <Video source={{uri: videos[index]}}
+              style={{width:300, height:300}} />
       </View>
     );
   }
