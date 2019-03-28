@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createAppContainer, createBottomTabNavigator } from "react-navigation";
 import Video from 'react-native-video';
 
 
@@ -70,14 +70,45 @@ class DetailsScreen extends React.Component {
   }
 }
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Details: DetailsScreen
-  },
-  {
-    initialRouteName: "Home"
+const HomeStack = createStackNavigator({
+  Home: {
+    screen: HomeScreen,
   }
-);
+})
+
+const RouteConfigs = {
+  Home: {
+    screen: HomeStack,
+  },
+}
+
+const _tabBarOnPress = async ({navigation, defaultHandler}) => {}
+
+const BottomTabNavigatorConfig = {
+  tabBarOptions: {
+    activeTintColor: '#23afff',
+    inactiveTintColor: '#e1dbdf',
+    showLabel: true,
+    style: {
+      backgroundColor: '#ffffff'
+    }
+  },
+  navigationOptions: {
+    tabBarOnPress: _tabBarOnPress
+  },
+}
+
+const BottomTabNavigator = createBottomTabNavigator(RouteConfigs, BottomTabNavigatorConfig)
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: BottomTabNavigator
+  },
+  Details: {
+    screen: DetailsScreen,
+  },
+},{
+  initialRouteName: "Home"
+})
 
 export default createAppContainer(AppNavigator);
