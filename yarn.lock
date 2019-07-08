@@ -5337,10 +5337,9 @@ react-native-tab-view@^1.0.0, react-native-tab-view@^1.2.0:
   dependencies:
     prop-types "^15.6.1"
 
-react-native-video@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-4.4.0.tgz#18012cb8ad90aac42be3d04c92430f820f3ab03b"
-  integrity sha512-QXdud1JII1tuTVeYAedWqRJnf8eDuY87ucSXdERuWQb9umuLVbkF1BcAckhiWf3/+R4YdKBFR0nY2n4o8e0qkg==
+"react-native-video@git+https://github.com/24i/react-native-video#feature/handle-props-racing-conditions-on-expplayer":
+  version "4.4.2"
+  resolved "git+https://github.com/24i/react-native-video#cb3cff777211667539291bf1f1e6cfeb507ed47d"
   dependencies:
     keymirror "^0.1.1"
     prop-types "^15.5.10"

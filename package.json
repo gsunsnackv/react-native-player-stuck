@@ -11,7 +11,7 @@
     "react": "16.8.3",
     "react-native": "0.59.2",
     "react-native-gesture-handler": "^1.1.0",
-    "react-native-video": "^4.4.0",
+    "react-native-video": "git+https://github.com/24i/react-native-video#feature/handle-props-racing-conditions-on-expplayer",
     "react-navigation": "^3.5.1"
   },
   "devDependencies": {
